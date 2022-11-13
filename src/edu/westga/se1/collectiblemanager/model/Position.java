@@ -1,4 +1,4 @@
-package edu.westga.cs3151.collectiblemanager.model;
+package edu.westga.se1.collectiblemanager.model;
 
 /**
  * The Class Position

@@ -12,17 +12,17 @@ import javafx.stage.Stage;
  * @author CS3151
  * @version Spring
  */
-public class KnightsTravailsApplication extends Application {
+public class CollectibleManagerApplication extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("view/PuzzleGui.fxml"));
+			loader.setLocation(getClass().getResource("view/LoginPageGui.fxml"));
 			Pane pane = loader.load();
 			Scene scene = new Scene(pane);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("CS3151 Project by Miguel Campos");
+			primaryStage.setTitle("Homework 5 by Michael Lee");
 			primaryStage.show();
 		} catch (Exception ex) {
 			ex.printStackTrace();

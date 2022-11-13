@@ -1,7 +1,7 @@
-package edu.westga.cs3151.collectiblemanager.view;
+package edu.westga.se1.collectiblemanager.view;
 
-import edu.westga.cs3151.collectiblemanager.model.Position;
-import edu.westga.cs3151.collectiblemanager.viewmodel.PuzzleViewModel;
+import edu.westga.se1.collectiblemanager.model.Position;
+import edu.westga.se1.collectiblemanager.viewmodel.PuzzleViewModel;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
@@ -167,7 +167,6 @@ public class PuzzleCodeBehind {
 
 	@FXML
 	void handleShowSolution(ActionEvent event) {
-		this.viewModel.showSolution();
 	}
 
 	@FXML

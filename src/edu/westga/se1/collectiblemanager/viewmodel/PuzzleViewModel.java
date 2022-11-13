@@ -1,12 +1,10 @@
-package edu.westga.cs3151.collectiblemanager.viewmodel;
+package edu.westga.se1.collectiblemanager.viewmodel;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.Random;
 
-import edu.westga.cs3151.collectiblemanager.model.Position;
-import edu.westga.cs3151.collectiblemanager.view.KnightSolver;
+import edu.westga.se1.collectiblemanager.model.Position;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.property.BooleanProperty;
@@ -188,26 +186,6 @@ public class PuzzleViewModel {
 		}
 	}
 
-	/**
-	 * Shows a shortest path from the start to the goal position
-	 * 
-	 * @pre none
-	 * @post wonProperty.getValue == true && lostProperty.getValue() == true
-	 */
-	public void showSolution() {
-		KnightSolver newSolver = new KnightSolver();
-		LinkedList<Position> solutionPath = new LinkedList<Position>();
-		solutionPath = newSolver.solver(this.startPosition.getRow(), this.startPosition.getCol(), this.targetPositionProperty.getValue());
-		this.wonProperty.setValue(true);
-		this.lostProperty.setValue(true);
-		this.tracePath(solutionPath.iterator(), solutionPath.size() - 1);
-		
-		for (Position current : solutionPath) {
-			System.out.println(current.getRow() + ", " + current.getCol());
-		}
-		System.out.println(this.targetPositionProperty.getValue().getRow() + "//" + this.targetPositionProperty.getValue().getCol());
-		
-	}
 
 	/**
 	 * Instantiates a new knight's travails instance
