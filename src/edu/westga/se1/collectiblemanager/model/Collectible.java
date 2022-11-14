@@ -2,7 +2,10 @@ package edu.westga.se1.collectiblemanager.model;
 
 public class Collectible {
 	private String name;
-	private int quantity;
+	private int year;
+	private int price;
+	private String descritpion;
+	private Condition condition;
 	
 	/**
 	 * Constructor for Collectible object
@@ -11,7 +14,7 @@ public class Collectible {
 	 * @param name the name of the collectible
 	 * @param quantity
 	 */
-	public Collectible(String name) {
+	public Collectible(String name, int year, int price, String description, Condition condition) {
 		if (name == null) {
 			throw new IllegalArgumentException("name cannot be null");
 		}
@@ -20,7 +23,12 @@ public class Collectible {
 		}
 		
 		this.name = name;
+		this.year = year;
+		this.price = price;
+		this.descritpion = description;
+		this.condition = condition;
 	}
+	
 	
 	/**
 	 * Gets the name of the collectible
@@ -32,5 +40,42 @@ public class Collectible {
 	public String getName() {
 		return this.name;
 	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public String getDescritpion() {
+		return descritpion;
+	}
+
+	public void setDescritpion(String descritpion) {
+		this.descritpion = descritpion;
+	}
+
+	public Condition getCondition() {
+		return condition;
+	}
+
+	public void setCondition(Condition condition) {
+		this.condition = condition;
+	}
+
 
 }

@@ -2,16 +2,17 @@ package edu.westga.se1.collectiblemanager.model;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class CollectibleManager {
-	private Map<User, List<Collectible>> database;
+public class UserManager {
+
+	private Map<String, String> users;
 	
-	public CollectibleManager() {
-		this.database = new HashMap<User, List<Collectible>>();
+	public UserManager() {
+		this.users = new HashMap<String, String>();
 	}
 	
+
 	/**
 	 * Clears the HashMap
 	 * 
@@ -19,7 +20,7 @@ public class CollectibleManager {
 	 * @postcondition none
 	 */
 	public void clear() {
-		this.database.clear();
+		this.users.clear();
 	}
 
 	/**
@@ -31,11 +32,11 @@ public class CollectibleManager {
 	 * @param key key with which the specified value is associated
 	 * @return the Value associated with the key
 	 */
-	public Collection<Collectible> get(User key) {
+	public String get(String key) {
 		if (key == null) {
 			throw new IllegalArgumentException("Key cannot be null");
 		}
-		return this.database.get(key);
+		return this.users.get(key);
 	}
 
 	/**
@@ -47,11 +48,11 @@ public class CollectibleManager {
 	 * @param key key with which the specified value is associated
 	 * @return true if it does contain key, false otherwise
 	 */
-	public boolean containsKey(User key) {
+	public boolean containsKey(String key) {
 		if (key == null) {
 			throw new IllegalArgumentException("Key cannot be null");
 		}
-		return this.database.containsKey(key);
+		return this.users.containsKey(key);
 	}
 
 	/**
@@ -63,7 +64,7 @@ public class CollectibleManager {
 	 * @return true if this map contains no key-value mappings
 	 */
 	public boolean isEmpty() {
-		return this.database.isEmpty();
+		return this.users.isEmpty();
 	}
 
 	/**
@@ -76,15 +77,15 @@ public class CollectibleManager {
 	 * @param value value to be associated with the specified key
 	 * @return true if added, false otherwise
 	 */
-	public boolean add(User key, List<Collectible>value) {
+	public boolean add(String key, String value) {
 		if (key == null) {
 			throw new IllegalArgumentException("Key cannot be null");
 		}
 		if (value == null) {
 			throw new IllegalArgumentException("Value cannot be null");
 		}
-		if (!this.database.containsKey(key)) {
-			this.database.put(key, value);
+		if (!this.users.containsKey(key)) {
+			this.users.put(key, value);
 			return true;
 		}
 		return false;
@@ -99,14 +100,14 @@ public class CollectibleManager {
 	 * @param key   key with which the specified value is associated
 	 * @param value value to be associated with the specified key
 	 */
-	public void update(User key, List<Collectible>value) {
+	public void update(String key, String value) {
 		if (key == null) {
 			throw new IllegalArgumentException("Key cannot be null");
 		}
 		if (value == null) {
 			throw new IllegalArgumentException("value cannot be null");
 		}
-		this.database.replace(key, value);
+		this.users.replace(key, value);
 	}
 
 	/**
@@ -118,12 +119,12 @@ public class CollectibleManager {
 	 * @param key   key with which the specified value is associated
 	 * @return true if value is removed, false otherwise
 	 */
-	public boolean remove(User key) {
+	public boolean remove(String key) {
 		if (key == null) {
 			throw new IllegalArgumentException("Key cannot be null");
 		}
-		if (this.database.containsKey(key)) {
-			this.database.remove(key);
+		if (this.users.containsKey(key)) {
+			this.users.remove(key);
 			return true;
 		}
 		return false;
@@ -138,20 +139,19 @@ public class CollectibleManager {
 	 * @return number of values in the Map
 	 */
 	public int size() {
-		return this.database.size();
+		return this.users.size();
 	}
 
 	/**
 	 * Gets a collection of Values
-	 * @return 
 	 * 
 	 * @precondition none
 	 * @postcondition none
 	 * 
 	 * @return a Collection of Values
 	 */
-	public Collection<List<Collectible>> values() {
-		return this.database.values();
+	public Collection<String> values() {
+		return this.users.values();
 	}
 
 	/**
@@ -162,7 +162,8 @@ public class CollectibleManager {
 	 * 
 	 * @return a Collection of keys
 	 */
-	public Collection<User> keys() {
-		return this.database.keySet();
+	public Collection<String> keys() {
+		return this.users.keySet();
 	}
+	
 }
