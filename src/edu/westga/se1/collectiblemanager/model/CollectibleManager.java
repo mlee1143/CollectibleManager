@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class CollectibleManager {
 	private Map<User, List<Collectible>> database;
@@ -31,7 +32,7 @@ public class CollectibleManager {
 	 * @param key key with which the specified value is associated
 	 * @return the Value associated with the key
 	 */
-	public Collection<Collectible> get(User key) {
+	public List<Collectible> get(User key) {
 		if (key == null) {
 			throw new IllegalArgumentException("Key cannot be null");
 		}
